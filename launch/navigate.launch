@@ -6,5 +6,5 @@
     <!-- AMCL used for localization -->
     <include file="$(find hut)/launch/include/amcl.launch" />
     
-    <include file="$(find hutrobot)/launch/include/move_base/move_base_2wd.launch" />
+    <include file="$(find hut)/launch/include/move_base/move_base_2wd.launch" />
 </launch>
