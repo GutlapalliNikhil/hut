@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
     roscpp 
     rospy 
     tf2
-    t2_ros
+    tf2_ros
     nav_msgs 
     hut_msgs 
     geometry_msgs 
