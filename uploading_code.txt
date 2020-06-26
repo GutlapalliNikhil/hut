@@ -1,0 +1,33 @@
+This folder contains the different versions of teensy code.
+
+teensy_v3.1(final) contains the final modified codes for teensy microcontroller
+.....................................................................
+To upload the code to teensy you can use platform-io software
+******************************************************************
+Below are the commands to install platformio software.
+	$sudo easy_install pip
+	$sudo pip install -U platformiov 
+*****************************************************************
+Refer http://docs.platformio.org/en/latest/platforms/teensy.html
+*****************************************************************
+Before uploading the code you have to create a file named "platformio.ini" inside firmware folder and mention the below parameters inside the "platformio.ini" file.
+*****************************
+[env:teensy31]
+
+platform = teensy
+framework = arduino
+board = teensy31
+upload_port = /dev/ttyACM0
+*****************************
+Go to firmware directory inside teensy_v3.1(final) and type the below command in terminal.
+
+	$platformio run --target upload
+...................................................................
+
+To upload the code to teensy through arduino interface,install teensy configation in arduino
+
+lib folder contains all the libraries for teensy code, copy the libraries in Arduino library directory and upload firmware.ino in src folder.
+
+
+
+....................................................................

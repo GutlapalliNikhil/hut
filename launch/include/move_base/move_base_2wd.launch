@@ -1,0 +1,58 @@
+
+<!-- REMOVE THIS FOR USING SBPL_LATTICE_PLANNER -->
+<!--launch>
+    <node ns="local_costmap" name="voxel_grid_throttle" pkg="topic_tools" type="throttle" args="messages voxel_grid 3.0 voxel_grid_throttled" />
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+	<param name="footprint_padding" value="0.01" />
+        <param name="controller_frequency" value="10.0" />
+        <param name="controller_patience" value="100.0" />
+        <param name="base_global_planner" value="SBPLLatticePlanner" />
+        <param name="SBPLLatticePlanner/primitive_filename" value="$(find sbpl_lattice_planner)/matlab/mprim/pr2.mprim" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/local_costmap_params_close.yaml" command="load" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/sbpl_global_params.yaml" command="load" />
+        <rosparam file="$(find sbpl_lattice_planner)/launch/move_base/base_local_planner_params_close.yaml" command="load" />
+    </node>
+</launch-->
+
+
+<!-- REMOVE THIS FOR USING CARROT_PLANNER -->
+<launch>
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find hut)/param/navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find hut)/param/navigation/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find hut)/param/navigation/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find hut)/param/navigation/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find hut)/param/navigation/base_local_planner_default_params.yaml" command="load" />
+        <rosparam file="$(find hut)/param/navigation/move_base_params.yaml" command="load" />
+    </node>
+</launch>
+
+
+<!-- REMOVE THIS FOR USING ASR_MILD_NAVIGATION FTC_PLANNER-->
+<!-- launch>
+    <node ns="local_costmap" name="voxel_grid_throttle" pkg="topic_tools" type="throttle" args="messages voxel_grid 3.0 voxel_grid_throttled" />
+    <node name="move_base" pkg="move_base" type="move_base" respawn="false"  output="screen">
+	    <param name="controller_frequency" value="5"/>
+	    <param name="planner_frequency" value="5"/>
+	    <param name="base_global_planner" value="asr_navfn/NavfnROS"/>
+            <sssparam name="base_local_planner" value="ftc_local_planner/FTCPlanner" />
+	    <rosparam file="$(find asr_mild_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+	    <rosparam file="$(find asr_mild_navigation)/param/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+	    <rosparam file="$(find asr_mild_navigation)/param/global_costmap_params.yaml" command="load"/>
+	    <rosparam file="$(find asr_mild_navigation)/param/local_costmap_params.yaml" command="load"/>
+	    <rosparam file="$(find asr_mild_navigation)/param/ftc_local_planner_params.yaml" command="load"/>
+   </node>
+</launch -->
+
+
+
+
+
+
+
+
+
+
